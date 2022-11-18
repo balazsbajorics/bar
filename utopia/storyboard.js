@@ -1,44 +1,123 @@
+import { Scene, Storyboard } from 'utopia-api'
+import { App } from '/src/app.js'
+import { DecorativeLines } from '/src/cardcomponents/decorations.js'
+import { Description } from '/src/cardcomponents/description.js'
+import { Name } from '/src/cardcomponents/name.js'
+import { Rating } from '/src/cardcomponents/rating.js'
+import { Stamp } from '/src/cardcomponents/stamp.js'
+import { ImageContainer } from '/src/cardcomponents/imagecontainer.js'
+import { Profile } from '/src/profile.js'
 import * as React from 'react'
-import { Storyboard } from 'utopia-api'
 import { View } from 'utopia-api'
-import uuid from 'react-uuid'
-
-const UUID = () => {
-  const uid = React.useMemo(() => uuid(), [])
-  return (
-    <div
-      data-uid='33d'
-      className='font-mono text text-center text-gray-300 uppercase'
-    >
-      {uid}
-    </div>
-  )
-}
 
 export var storyboard = (
-  <Storyboard data-uid='0cd'>
+  <Storyboard>
+    <Scene
+      style={{
+        width: 834,
+        position: 'absolute',
+        left: -1312,
+        top: -593,
+      }}
+      data-label='iPad Pro 11"'
+    >
+      <App style={{}} />
+    </Scene>
+    <DecorativeLines
+      style={{
+        width: 1162,
+        position: 'absolute',
+        left: -199,
+        top: 1198,
+      }}
+    />
+    <Description
+      description='testing the card out la la la description'
+      style={{
+        position: 'absolute',
+        left: -291,
+        top: 578.5,
+        padding: '5px 20px 14px 20px',
+        borderRadius: '0px 0px 20px 0px',
+      }}
+    />
+    <ImageContainer
+      imageUrl='https://cdn.utopia.app/editor/sample-assets/martini.jpg'
+      style={{ position: 'absolute', left: -198, top: 446 }}
+    />
+    <Stamp
+      name='04 19 2011'
+      style={{
+        position: 'absolute',
+        left: 585,
+        top: 498.5,
+      }}
+      color='var(--orange)'
+    />
+    <Rating
+      rating={5}
+      style={{
+        position: 'absolute',
+        left: -291,
+        top: 855,
+        padding: '25px 20px',
+        borderRadius: 20,
+      }}
+      color='var(--orange)'
+    />
+    <Name
+      text='Drink a Martini on Mount Everest'
+      style={{
+        position: 'absolute',
+        width: '700px',
+        left: 126,
+        top: 1056,
+      }}
+    />
+    <div
+      style={{
+        backgroundColor: 'var(--off-white)',
+        position: 'absolute',
+        left: -103,
+        top: 979,
+        width: 966,
+        height: 316,
+        zIndex: -10,
+      }}
+    />
+    <Scene
+      style={{
+        width: 834,
+        height: 848,
+        position: 'absolute',
+        left: -270,
+        top: -594.25,
+        background: 'var(--yellow)',
+      }}
+      data-label='User Profile Page'
+    >
+      <Profile />
+    </Scene>
     <View
       style={{
-        backgroundColor: '#8C00FF',
-        width: 279,
-        height: 382,
+        backgroundColor: '#0091FFAA',
+        position: 'absolute',
+        left: -774,
+        top: -937,
+        width: 207,
+        height: 170,
       }}
-      data-uid='adb'
     >
       <View
-        className='rounded-2xl shadow-xl flex items-center justify-center'
         style={{
-          backgroundColor: '#FFFFFF',
+          backgroundColor: '#0091FFAA',
           position: 'absolute',
-          left: 52,
-          top: 93,
-          width: 175,
-          height: 197,
+          left: 21.5,
+          top: 15,
+          width: 82,
+          height: 140,
         }}
-        data-uid='42d'
-      >
-        <UUID data-uid='b11' />
-      </View>
+      />
     </View>
   </Storyboard>
 )

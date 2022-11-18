@@ -7,7 +7,7 @@ export function FlexRow({ children, style, ...props }) {
       style={{
         position: 'relative',
         display: 'flex',
-        flexDirection: 'row', // hehheh
+        flexDirection: 'row',
         ...style,
       }}
     >
@@ -44,28 +44,6 @@ export function TwoColumnGrid({
         position: 'relative',
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
-        ...style,
-      }}
-    >
-      {children}
-    </div>
-  )
-}
-
-export function ThreeColumnGrid({
-  children,
-  style,
-  ...props
-}) {
-  return (
-    <div
-      {...props}
-      style={{
-        position: 'relative',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr 1fr',
-        width: '100%',
-        hieght: '100%',
         ...style,
       }}
     >
